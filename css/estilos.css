@@ -707,7 +707,13 @@ body {
   }
   
   /* Estilos Responsivos */
-
+  @media (max-width: 768px) {
+    .logos-slide img {
+      height: 300px; /* Tamaño ajustado para tablets */
+      width: 200px;
+      margin: 0 15px;
+    }
+  }
     .photo-container:before,
     .photo-container:after {
       width: 20%; /* Ajuste del gradiente para móviles */
