@@ -634,39 +634,102 @@ body {
     text-decoration: none; 
 }
 
-/*  Contenedor */
 
-/* Estilos para el contenedor principal */
-.photo-container {
-    overflow: hidden; /* Oculta el desbordamiento de las imágenes */
-}
 
-/* Estilos para el contenedor interno que contiene las imágenes */
-.photos-wrapper {
-    display: flex; /* Utiliza flexbox para alinear las imágenes */
-    animation: scroll-reel 20s linear infinite; /* Inicia la animación para desplazar las imágenes */
-}
+/* Contenedor */
 
-/* Estilos para las imágenes dentro del contenedor */
-.photos-wrapper img {
-    max-width: 100%; /* Asegura que las imágenes no se desborden del contenedor */
-    height: 600px; /* Mantiene la relación de aspecto de las imágenes */
-    border-radius: 8px; /* Bordes redondeados para las imágenes */
-    margin-right: 20px; /* Espacio entre las imágenes */
-}
-
-/* Animación para desplazar las imágenes */
-@keyframes scroll-reel {
-    0% {
-        transform: translateX(0); /* Inicia desde la posición inicial */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #f2f2f2;
+  }
+  
+  @keyframes slide {
+    from {
+      transform: translateX(0);
     }
-    100% {
-        transform: translateX(-100%); /* Se desplaza hacia la izquierda */
+    to {
+      transform: translateX(-100%);
     }
-}
+  }
+  
+  .photo-container {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .photo-container:before,
+  .photo-container:after {
+    position: absolute;
+    top: 0;
+    width: 10%; /* Ajustado para responsividad */
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .photo-container:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .photo-container:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+  
+  .photos-wrapper:hover .logos-slide {
+    animation-play-state: paused;
+  }
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  }
+  
+  .logos-slide img {
+    height: 400px; /* Tamaño ajustado para desktop */
+    width: 300px;  /* Asegurar que todas tengan el mismo tamaño */
+    margin: 0 20px;
+    border-radius: 15px; /* Agregar border-radius */
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+  }
+  
+  .logos-slide img:hover {
+    transform: scale(1.25); /* Efecto de escala al pasar el cursor */
+  }
+  
+  /* Estilos Responsivos */
+  @media (max-width: 768px) {
+    .logos-slide img {
+      height: 250px; /* Tamaño ajustado para tablets */
+      width: 200px;
+      margin: 0 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logos-slide img {
+      height: 200px; /* Tamaño ajustado para móviles */
+      width: 150px;
+      margin: 0 10px;
+    }
+    
+    .photo-container:before,
+    .photo-container:after {
+      width: 20%; /* Ajuste del gradiente para móviles */
+    }
+  }
+  
+/*============== Estilos para el contenedor del mapa =========================*/
 
-
-/* Estilos para el contenedor del mapa */
 .map-container {
     width: 100%; /* O el ancho deseado */
     height: 400px; /* O la altura deseada */

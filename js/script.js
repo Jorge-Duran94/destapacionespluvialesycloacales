@@ -10,11 +10,7 @@ function seleccionar(link) {
 
 
 
-// Clonar las imágenes para crear un efecto infinito
-const photosWrapper = document.querySelector('.photos-wrapper');
-const photos = photosWrapper.querySelectorAll('img');
-
-photos.forEach(photo => {
-    const clone = photo.cloneNode(true);
-    photosWrapper.appendChild(clone);
+document.addEventListener("DOMContentLoaded", function() {
+    var copy = document.querySelector(".logos-slide").cloneNode(true);
+    document.querySelector(".photos-wrapper").appendChild(copy);
 });
