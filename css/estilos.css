@@ -695,7 +695,7 @@ body {
   }
   
   .logos-slide img {
-    height: 400px; /* Tamaño ajustado para desktop */
+    height: 450px; /* Tamaño ajustado para desktop */
     width: 300px;  /* Asegurar que todas tengan el mismo tamaño */
     margin: 0 20px;
     border-radius: 15px; /* Agregar border-radius */
@@ -707,26 +707,12 @@ body {
   }
   
   /* Estilos Responsivos */
-  @media (max-width: 768px) {
-    .logos-slide img {
-      height: 250px; /* Tamaño ajustado para tablets */
-      width: 200px;
-      margin: 0 15px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .logos-slide img {
-      height: 200px; /* Tamaño ajustado para móviles */
-      width: 150px;
-      margin: 0 10px;
-    }
-    
+
     .photo-container:before,
     .photo-container:after {
       width: 20%; /* Ajuste del gradiente para móviles */
     }
-  }
+
   
 /*============== Estilos para el contenedor del mapa =========================*/
 
